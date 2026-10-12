@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -30,6 +32,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Test Telegram notification
+        if: github.event_name == 'workflow_dispatch'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -41,16 +44,24 @@ jobs:
           token = os.environ["TELEGRAM_BOT_TOKEN"]
           chat_id = os.environ["TELEGRAM_CHAT_ID"]
 
+          if not token or not chat_id:
+              raise RuntimeError("Telegram secrets are missing")
+
           response = requests.post(
-              f"https://api.telegram.org/bot8948892283:AAGd1BTRZTEMGAWeJ5xLygewg2G2e4OWSSg/sendMessage",
+              f"https://api.telegram.org/bot{token}/sendMessage",
               json={
                   "chat_id": chat_id,
-                  "text": "✅ اختبار ناجح!\n\nنظام مراقبة أخبار البريمي وعُمان متصل بـ Telegram."
+                  "text": (
+                      "✅ اختبار ناجح!\n\n"
+                      "نظام مراقبة أخبار البريمي وعُمان "
+                      "متصل بـ Telegram.\n\n"
+                      "سيتم فحص حسابات X تلقائيًا."
+                  )
               },
               timeout=20
           )
           response.raise_for_status()
-          print("Telegram response OK:", response.json()["ok"])
+          print("Telegram test successful")
           PY
 
       - name: Check X posts and send Telegram alerts
@@ -65,8 +76,10 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add seen.json
+
             if ! git diff --cached --quiet; then
               git commit -m "Update monitored posts"
-              git push
+              git pull --rebase origin main
+              git push origin HEAD:main
             fi
           fi
