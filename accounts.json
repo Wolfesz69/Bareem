@@ -1,0 +1,70 @@
+
+{
+  "nitter_instances": [
+    "https://nitter.kareem.one",
+    "https://nitter.meowing.monster",
+    "https://shitter.thepixora.com"
+  ],
+  "accounts": [
+    {
+      "username": "alburaimigov",
+      "name": "محافظة البريمي",
+      "scope": "local"
+    },
+    {
+      "username": "EduGovBur",
+      "name": "تعليمية البريمي",
+      "scope": "local"
+    },
+    {
+      "username": "buraimi_al",
+      "name": "المجلس البلدي بالبريمي",
+      "scope": "local"
+    },
+    {
+      "username": "buraimi_social",
+      "name": "التنمية الاجتماعية بالبريمي",
+      "scope": "local"
+    },
+    {
+      "username": "OCCI_Buraimi",
+      "name": "غرفة تجارة وصناعة عمان - البريمي",
+      "scope": "local"
+    },
+    {
+      "username": "VTCalburaimi",
+      "name": "الكلية المهنية بالبريمي",
+      "scope": "local"
+    },
+    {
+      "username": "OmanNewsAgency",
+      "name": "وكالة الأنباء العمانية",
+      "scope": "national"
+    },
+    {
+      "username": "RoyalOmanPolice",
+      "name": "شرطة عمان السلطانية",
+      "scope": "national"
+    },
+    {
+      "username": "OmanMeteorology",
+      "name": "الأرصاد العمانية",
+      "scope": "national"
+    },
+    {
+      "username": "OmanTVGeneral",
+      "name": "تلفزيون سلطنة عمان",
+      "scope": "national"
+    },
+    {
+      "username": "OmanEPress",
+      "name": "جريدة عمان",
+      "scope": "national"
+    },
+    {
+      "username": "omaninfo1",
+      "name": "وزارة الإعلام",
+      "scope": "national"
+    }
+  ]
+}
