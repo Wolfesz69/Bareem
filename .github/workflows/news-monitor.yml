@@ -31,6 +31,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      # Telegram test only on manual runs
       - name: Test Telegram notification
         if: github.event_name == 'workflow_dispatch'
         env:
@@ -41,45 +42,70 @@ jobs:
           import os
           import requests
 
-          token = os.environ["TELEGRAM_BOT_TOKEN"]
-          chat_id = os.environ["TELEGRAM_CHAT_ID"]
+          token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+          chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
-          if not token or not chat_id:
-              raise RuntimeError("Telegram secrets are missing")
+          if not token:
+              raise RuntimeError("Missing TELEGRAM_BOT_TOKEN secret")
+
+          if not chat_id:
+              raise RuntimeError("Missing TELEGRAM_CHAT_ID secret")
 
           response = requests.post(
               f"https://api.telegram.org/bot{token}/sendMessage",
               json={
                   "chat_id": chat_id,
                   "text": (
-                      "✅ اختبار ناجح!\n\n"
+                      "✅ Telegram Test Successful!\n\n"
                       "نظام مراقبة أخبار البريمي وعُمان "
-                      "متصل بـ Telegram.\n\n"
-                      "سيتم فحص حسابات X تلقائيًا."
-                  )
+                      "متصل بتليجرام.\n\n"
+                      "📡 GitHub Actions is working."
+                  ),
+                  "disable_web_page_preview": True
               },
               timeout=20
           )
-          response.raise_for_status()
-          print("Telegram test successful")
+
+          if not response.ok:
+              try:
+                  error = response.json().get(
+                      "description",
+                      "Unknown Telegram error"
+                  )
+              except ValueError:
+                  error = "Telegram returned an invalid response"
+
+              print("Telegram error:", error)
+              raise RuntimeError(
+                  f"Telegram test failed: HTTP {response.status_code}"
+              )
+
+          print("Telegram test successful!")
           PY
 
+      # Monitor X accounts through Nitter RSS
       - name: Check X posts and send Telegram alerts
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python monitor.py
 
+      # Save processed posts to prevent duplicates
       - name: Save seen posts
         run: |
           if [ -f seen.json ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
             git add seen.json
 
             if ! git diff --cached --quiet; then
               git commit -m "Update monitored posts"
               git pull --rebase origin main
               git push origin HEAD:main
+            else
+              echo "No new posts to save."
             fi
+          else
+            echo "No seen.json file found."
           fi
