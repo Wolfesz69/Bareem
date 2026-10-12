@@ -31,7 +31,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # Telegram test only on manual runs
       - name: Test Telegram notification
         if: github.event_name == 'workflow_dispatch'
         env:
@@ -45,56 +44,38 @@ jobs:
           token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
           chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
-          if not token:
-              raise RuntimeError("Missing TELEGRAM_BOT_TOKEN secret")
-
-          if not chat_id:
-              raise RuntimeError("Missing TELEGRAM_CHAT_ID secret")
+          if not token or not chat_id:
+              raise RuntimeError("Missing Telegram secrets")
 
           response = requests.post(
               f"https://api.telegram.org/bot{token}/sendMessage",
               json={
                   "chat_id": chat_id,
-                  "text": (
-                      "✅ Telegram Test Successful!\n\n"
-                      "نظام مراقبة أخبار البريمي وعُمان "
-                      "متصل بتليجرام.\n\n"
-                      "📡 GitHub Actions is working."
-                  ),
+                  "text": "✅ Bareem News Monitor is connected!",
                   "disable_web_page_preview": True
               },
               timeout=20
           )
 
-          if not response.ok:
-              try:
-                  error = response.json().get(
-                      "description",
-                      "Unknown Telegram error"
-                  )
-              except ValueError:
-                  error = "Telegram returned an invalid response"
+          response.raise_for_status()
 
-              print("Telegram error:", error)
-              raise RuntimeError(
-                  f"Telegram test failed: HTTP {response.status_code}"
-              )
+          if not response.json().get("ok"):
+              raise RuntimeError("Telegram test failed")
 
           print("Telegram test successful!")
           PY
 
-      # Monitor X accounts through Nitter RSS
       - name: Check X posts and send Telegram alerts
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python monitor.py
 
-      # Save processed posts to prevent duplicates
-      
       - name: Save monitored posts and history
-      
+        shell: bash
         run: |
+          set -e
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
@@ -102,6 +83,8 @@ jobs:
           cp posts_log.json /tmp/bareem-posts-log.json
 
           for attempt in 1 2 3; do
+            echo "Save attempt $attempt"
+
             git fetch origin main
             git reset --hard origin/main
 
@@ -109,42 +92,84 @@ jobs:
           import json
           from pathlib import Path
 
-          def read(path, default):
-              try:
-                  return json.loads(Path(path).read_text(encoding="utf-8"))
-              except (FileNotFoundError, json.JSONDecodeError):
+          def read_json(filename, default):
+              path = Path(filename)
+
+              if not path.exists():
                   return default
 
-          current_seen = read("seen.json", {"accounts": {}})
-          new_seen = read("/tmp/bareem-seen.json", {"accounts": {}})
+              content = path.read_text(encoding="utf-8").strip()
 
-          current_accounts = current_seen.setdefault("accounts", {})
+              if not content:
+                  return default
 
-          for username, ids in new_seen.get("accounts", {}).items():
-              merged = list(dict.fromkeys(
-                  current_accounts.get(username, []) + ids
+              return json.loads(content)
+
+          current_seen = read_json(
+              "seen.json",
+              {"accounts": {}}
+          )
+
+          incoming_seen = read_json(
+              "/tmp/bareem-seen.json",
+              {"accounts": {}}
+          )
+
+          accounts = current_seen.setdefault("accounts", {})
+
+          for username, ids in incoming_seen.get("accounts", {}).items():
+              combined = list(dict.fromkeys(
+                  accounts.get(username, []) + ids
               ))
-              current_accounts[username] = merged[-500:]
+              accounts[username] = combined[-500:]
 
           Path("seen.json").write_text(
-              json.dumps(current_seen, ensure_ascii=False, indent=2),
+              json.dumps(
+                  current_seen,
+                  ensure_ascii=False,
+                  indent=2
+              ),
               encoding="utf-8"
           )
 
-          current_log = read("posts_log.json", [])
-          new_log = read("/tmp/bareem-posts-log.json", [])
+          current_log = read_json("posts_log.json", [])
+          incoming_log = read_json("/tmp/bareem-posts-log.json", [])
 
           records = {}
-          for record in current_log + new_log:
-              if isinstance(record, dict) and record.get("id"):
-                  records[record["id"]] = record
+
+          for record in current_log + incoming_log:
+              if not isinstance(record, dict):
+                  continue
+
+              post_id = record.get("id")
+              account = record.get("account")
+
+              if not post_id or not account:
+                  continue
+
+              key = (account, post_id)
+              previous = records.get(key)
+
+              if previous is None:
+                  records[key] = record
+              elif (
+                  record.get("sent_to_telegram")
+                  and not previous.get("sent_to_telegram")
+              ):
+                  records[key] = record
 
           merged_log = list(records.values())[-5000:]
 
           Path("posts_log.json").write_text(
-              json.dumps(merged_log, ensure_ascii=False, indent=2),
+              json.dumps(
+                  merged_log,
+                  ensure_ascii=False,
+                  indent=2
+              ),
               encoding="utf-8"
           )
+
+          print(f"Saved {len(merged_log)} log records")
           PY
 
             git add seen.json posts_log.json
@@ -161,10 +186,9 @@ jobs:
               exit 0
             fi
 
-            echo "Push conflict; retrying ($attempt/3)"
+            echo "Push failed; retrying..."
             sleep 3
           done
 
           echo "Failed to save after 3 attempts."
           exit 1
-
