@@ -65,6 +65,106 @@
       "username": "omaninfo1",
       "name": "وزارة الإعلام",
       "scope": "national"
+    },
+    {
+      "username": "Halafmradio",
+      "name": "هلا أف أم",
+      "scope": "national"
+    },
+    {
+      "username": "al_wisal",
+      "name": "إذاعة الوصال",
+      "scope": "national"
+    },
+    {
+      "username": "shabiba",
+      "name": "الشبيبة",
+      "scope": "national"
+    },
+    {
+      "username": "Atheer_Oman",
+      "name": "أثير",
+      "scope": "national"
+    },
+    {
+      "username": "OmanObserver",
+      "name": "عمان أوبزرفر",
+      "scope": "national"
+    },
+    {
+      "username": "timesofoman",
+      "name": "تايمز أوف عمان",
+      "scope": "national"
+    },
+    {
+      "username": "muscat_daily",
+      "name": "مسقط ديلي",
+      "scope": "national"
+    },
+    {
+      "username": "Oman_biz",
+      "name": "عمان أوبزرفر - الاقتصاد",
+      "scope": "national"
+    },
+    {
+      "username": "omantvnews",
+      "name": "مركز أخبار تلفزيون عمان",
+      "scope": "national"
+    },
+    {
+      "username": "fmofoman",
+      "name": "وزارة الخارجية",
+      "scope": "national"
+    },
+    {
+      "username": "labour_oman",
+      "name": "وزارة العمل",
+      "scope": "national"
+    },
+    {
+      "username": "EduGovOman",
+      "name": "وزارة التعليم",
+      "scope": "national"
+    },
+    {
+      "username": "OmaniMOH_CC",
+      "name": "مركز اتصال وزارة الصحة",
+      "scope": "national"
+    },
+    {
+      "username": "oman_pp",
+      "name": "الادعاء العام",
+      "scope": "national"
+    },
+    {
+      "username": "newsprograms",
+      "name": "البرامج الإخبارية",
+      "scope": "national"
+    },
+    {
+      "username": "oman1_news",
+      "name": "صحيفة نشر الإلكترونية",
+      "scope": "national"
+    },
+    {
+      "username": "omaniaaco",
+      "name": "صحيفة السبلة العمانية",
+      "scope": "national"
+    },
+    {
+      "username": "injaz_oman",
+      "name": "إنجاز عمان",
+      "scope": "national"
+    },
+    {
+      "username": "badralbusaidi",
+      "name": "وزير الخارجية بدر البوسعيدي",
+      "scope": "national"
+    },
+    {
+      "username": "ea_oman",
+      "name": "هيئة البيئة - سلطنة عمان",
+      "scope": "national"
     }
   ]
 }
