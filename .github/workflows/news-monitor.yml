@@ -93,16 +93,78 @@ jobs:
       # Save processed posts to prevent duplicates
       
       - name: Save monitored posts and history
+      
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add seen.json posts_log.json
+          cp seen.json /tmp/bareem-seen.json
+          cp posts_log.json /tmp/bareem-posts-log.json
 
-          if ! git diff --cached --quiet; then
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+
+            python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def read(path, default):
+              try:
+                  return json.loads(Path(path).read_text(encoding="utf-8"))
+              except (FileNotFoundError, json.JSONDecodeError):
+                  return default
+
+          current_seen = read("seen.json", {"accounts": {}})
+          new_seen = read("/tmp/bareem-seen.json", {"accounts": {}})
+
+          current_accounts = current_seen.setdefault("accounts", {})
+
+          for username, ids in new_seen.get("accounts", {}).items():
+              merged = list(dict.fromkeys(
+                  current_accounts.get(username, []) + ids
+              ))
+              current_accounts[username] = merged[-500:]
+
+          Path("seen.json").write_text(
+              json.dumps(current_seen, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+
+          current_log = read("posts_log.json", [])
+          new_log = read("/tmp/bareem-posts-log.json", [])
+
+          records = {}
+          for record in current_log + new_log:
+              if isinstance(record, dict) and record.get("id"):
+                  records[record["id"]] = record
+
+          merged_log = list(records.values())[-5000:]
+
+          Path("posts_log.json").write_text(
+              json.dumps(merged_log, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+          PY
+
+            git add seen.json posts_log.json
+
+            if git diff --cached --quiet; then
+              echo "No changes to save."
+              exit 0
+            fi
+
             git commit -m "Update monitored posts and history"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          else
-            echo "No new posts to save."
-          fi
+
+            if git push origin HEAD:main; then
+              echo "History saved successfully."
+              exit 0
+            fi
+
+            echo "Push conflict; retrying ($attempt/3)"
+            sleep 3
+          done
+
+          echo "Failed to save after 3 attempts."
+          exit 1
+
