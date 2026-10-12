@@ -7,6 +7,9 @@ import hashlib
 import html
 from pathlib import Path
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
+
+
 
 import requests
 import feedparser
@@ -154,6 +157,31 @@ def make_record(entry, account, status):
     }
 
 
+# Only accept posts published on or after
+# 13 October 2026, 00:00 Oman time.
+CUTOFF = datetime(
+    2026, 10, 13, 0, 0,
+    tzinfo=ZoneInfo("Asia/Muscat")
+).astimezone(timezone.utc)
+
+
+def is_recent_post(entry):
+    published = (
+        entry.get("published_parsed")
+        or entry.get("updated_parsed")
+    )
+
+    if not published:
+        # Unknown date: do not send.
+        return False
+
+    post_date = datetime(
+        *published[:6],
+        tzinfo=timezone.utc
+    )
+
+    return post_date >= CUTOFF
+
 def main():
     if not os.environ.get("TELEGRAM_BOT_TOKEN"):
         raise RuntimeError("Missing TELEGRAM_BOT_TOKEN")
@@ -214,6 +242,11 @@ def main():
 
             if pid in seen:
                 continue
+                
+            if not is_recent_post(entry):
+                seen.add(pid)
+                continue
+
 
             title = clean(entry.get("title", ""))
             summary = clean(entry.get("summary", ""))
