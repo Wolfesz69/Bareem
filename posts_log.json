@@ -10606,5 +10606,57 @@
     "detected_at": "2026-10-14T23:10:37.030328+00:00",
     "status": "filtered",
     "sent_to_telegram": false
+  },
+  {
+    "id": "e413fa758f1b039ab207bdf255993ba56155c95227233868c7c772e4ce6f4e95",
+    "account": "Atheer_Oman",
+    "source": "أثير",
+    "scope": "national",
+    "title": "R to @Atheer_Oman: #أثير| في 1967م، انطلقت الحكاية بتأسيس مدرسة عُمان للمهن الصناعية لربط التعليم بسوق العمل.",
+    "text": "#أثير | في 1967م، انطلقت الحكاية بتأسيس مدرسة عُمان للمهن الصناعية لربط التعليم بسوق العمل.",
+    "url": "https://x.com/Atheer_Oman/status/2110253495043715132",
+    "published": "2026-10-14T06:16:54+00:00",
+    "detected_at": "2026-10-15T01:47:16.517074+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "6ea1f844ad105b92b7cce5cace019ccfb92a94f0fac50bcac012ca2ec6217da6",
+    "account": "Atheer_Oman",
+    "source": "أثير",
+    "scope": "national",
+    "title": "R to @Atheer_Oman: #أثير| توزعت المدرسة في دارسيت بين الورش والفصول، واستقبلت طلبة من عمر 15 إلى 17 عامًا.",
+    "text": "#أثير | توزعت المدرسة في دارسيت بين الورش والفصول، واستقبلت طلبة من عمر 15 إلى 17 عامًا.",
+    "url": "https://x.com/Atheer_Oman/status/2110253511619551674",
+    "published": "2026-10-14T06:16:58+00:00",
+    "detected_at": "2026-10-15T01:47:16.517140+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "4d07e04ff18cd8f689cda611031162aabd2b9c44a8f8b6cb46211afc2434c448",
+    "account": "Atheer_Oman",
+    "source": "أثير",
+    "scope": "national",
+    "title": "R to @Atheer_Oman: #أثير| عام 1970م، تخرجت أول دفعة من 15 طالبًا، وبدأت المدرسة التوسع في استيعاب الطلبة.",
+    "text": "#أثير | عام 1970م، تخرجت أول دفعة من 15 طالبًا، وبدأت المدرسة التوسع في استيعاب الطلبة.",
+    "url": "https://x.com/Atheer_Oman/status/2110253534205952491",
+    "published": "2026-10-14T06:17:03+00:00",
+    "detected_at": "2026-10-15T01:47:16.517192+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "008e9a592cdfbf1c5a439256d005710c31aa2fdbc1d07464da7ebd58bdae2e92",
+    "account": "Atheer_Oman",
+    "source": "أثير",
+    "scope": "national",
+    "title": "R to @Atheer_Oman: #أثير| في أكتوبر 1970م، تسلمت الحكومة إدارة المدرسة كاملة، وبرزت فكرة تحويلها إلى كلية صناعية.",
+    "text": "#أثير | في أكتوبر 1970م، تسلمت الحكومة إدارة المدرسة كاملة، وبرزت فكرة تحويلها إلى كلية صناعية.",
+    "url": "https://x.com/Atheer_Oman/status/2110253550341407175",
+    "published": "2026-10-14T06:17:07+00:00",
+    "detected_at": "2026-10-15T01:47:16.517270+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
   }
 ]
