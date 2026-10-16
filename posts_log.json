@@ -15897,5 +15897,31 @@
     "detected_at": "2026-10-15T21:20:13.409554+00:00",
     "status": "filtered",
     "sent_to_telegram": false
+  },
+  {
+    "id": "7f18a609970ad1bdfdececd559f171dc9ab03254e73cfa51689a561c1d60c707",
+    "account": "OmanMeteorology",
+    "source": "الأرصاد العمانية",
+    "scope": "national",
+    "title": "-صحو بوجه عام على معظم محافظات سلطنة عمان. -تشكل السحب المنخفضة أو الضباب على أجزاء من محافظات الظاهرة والوسطى وظفار.",
+    "text": "-صحو بوجه عام على معظم محافظات سلطنة عمان. -تشكل السحب المنخفضة أو الضباب على أجزاء من محافظات الظاهرة والوسطى وظفار.",
+    "url": "https://x.com/OmanMeteorology/status/2110939087372996694",
+    "published": "2026-10-16T03:41:12+00:00",
+    "detected_at": "2026-10-16T04:20:08.102662+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "0ab5a52f518327c3327110b11ac43d8d5a05225cdabf0fd8face5bffdf6795ee",
+    "account": "OmanMeteorology",
+    "source": "الأرصاد العمانية",
+    "scope": "national",
+    "title": "حالة الطقس المتوقعة اليوم Today's Weather Forecast",
+    "text": "حالة الطقس المتوقعة اليوم Today's Weather Forecast",
+    "url": "https://x.com/OmanMeteorology/status/2110943818673741945",
+    "published": "2026-10-16T04:00:00+00:00",
+    "detected_at": "2026-10-16T04:20:08.102743+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
   }
 ]
