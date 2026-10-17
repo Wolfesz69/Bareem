@@ -21474,5 +21474,31 @@
     "detected_at": "2026-10-17T12:57:41.109692+00:00",
     "status": "filtered",
     "sent_to_telegram": false
+  },
+  {
+    "id": "14f18bf5ed09bd8fae6a64ede5f964d12095f7b176cf713f48376d2d3be3f58f",
+    "account": "OmanTVGeneral",
+    "source": "تلفزيون سلطنة عمان",
+    "scope": "national",
+    "title": "البرنامج الخاص بمناسبة #يوم_المرأة_العمانية https://x.com/i/broadcasts/1DxleVlBjQdKL",
+    "text": "البرنامج الخاص بمناسبة #يوم_المرأة_العمانية nitterk.kareem.one/i/broadcasts/1DxleVlBj… Link تلفزيون سلطنة عُمان البرنامج الخاص بمناسبة #يوم_المرأة_العمانية https://nitter.kareem.one/i/broadcasts/1DxleVlBjQdKL",
+    "url": "https://x.com/OmanTVGeneral/status/2111488767857148141",
+    "published": "2026-10-17T16:05:26+00:00",
+    "detected_at": "2026-10-17T16:18:44.302712+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "b1d281b15147ae6acfd2ee378c0fc3d670e6d006d2b24be36c1a970455292e11",
+    "account": "muscat_daily",
+    "source": "مسقط ديلي",
+    "scope": "national",
+    "title": "The Ministry of Labour has summoned BGP Oil and Gas Services officials for a meeting next week to resolve national worker terminations and protect employment stability.",
+    "text": "The Ministry of Labour has summoned BGP Oil and Gas Services officials for a meeting next week to resolve national worker terminations and protect employment stability.",
+    "url": "https://x.com/muscat_daily/status/2111454539555770563",
+    "published": "2026-10-17T13:49:25+00:00",
+    "detected_at": "2026-10-17T16:19:31.549785+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
   }
 ]
