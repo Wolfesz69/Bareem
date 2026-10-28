@@ -1,18 +1,5 @@
 [
   {
-    "id": "48dcfd2e3e3eec31b7ee4dbebc118f10a5eb15fe8bfb14e34d60848c51f8dda3",
-    "account": "oman1_news",
-    "source": "صحيفة نشر الإلكترونية",
-    "scope": "national",
-    "title": "عسى ما ترتفع",
-    "text": "عسى ما ترتفع نـشـر | Nashr (@nashr_om) المتحدث باسم #وزارة_العمل : حاليًا لا توجد بوادر لارتفاع أسعار استقدام العمالة وفي حال ارتفاع الأسعار ســـتتدخل الـــوزارة. — http://nitter.meowing.monster/nashr_om/status/2110374175223185693#m",
-    "url": "https://x.com/oman1_news/status/2110376998849892633",
-    "published": "2026-10-14T14:27:40+00:00",
-    "detected_at": "2026-10-14T15:28:58.303985+00:00",
-    "status": "filtered",
-    "sent_to_telegram": false
-  },
-  {
     "id": "0474168b6fc68a892b0e1e3fbe27fe97ffe7ca7e9280ccf85dc74ff775a52b06",
     "account": "oman1_news",
     "source": "صحيفة نشر الإلكترونية",
@@ -64996,6 +64983,19 @@
     "url": "https://x.com/badralbusaidi/status/2115166181913165907",
     "published": "2026-10-27T19:38:10+00:00",
     "detected_at": "2026-10-27T22:34:10.902418+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "6ca6f66cda60a6292558e72c61b305430b99b4e50ce02a3ccc0fea4d35a50be2",
+    "account": "badralbusaidi",
+    "source": "وزير الخارجية بدر البوسعيدي",
+    "scope": "national",
+    "title": "Enjoyed meeting UCL students in London today. We discussed the major transformations and challenges shaping our world, Oman’s vision on key regional and international issues, and their implications for security and stability. We also reflected on the challenges facing young people, particularly climate change, food security, and economic and social inequality. A thoughtful conversation on the issues of our time.",
+    "text": "Enjoyed meeting UCL students in London today. We discussed the major transformations and challenges shaping our world, Oman’s vision on key regional and international issues, and their implications for security and stability. We also reflected on the challenges facing young people, particularly climate change, food security, and economic and social inequality. A thoughtful conversation on the issues of our time. وزارة الخارجية (@FMofOman) — http://nitter.meowing.monster/FMofOman/status/2115191102668181760#m",
+    "url": "https://x.com/badralbusaidi/status/2115210816743977464",
+    "published": "2026-10-27T22:35:32+00:00",
+    "detected_at": "2026-10-28T01:43:38.559573+00:00",
     "status": "filtered",
     "sent_to_telegram": false
   }
