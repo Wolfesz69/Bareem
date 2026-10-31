@@ -1,18 +1,5 @@
 [
   {
-    "id": "081cb1cf618c94fbcae1f397c7a79d16fce3fd00f748b85cea8f8fff6111d69e",
-    "account": "OmanEPress",
-    "source": "جريدة عمان",
-    "scope": "national",
-    "title": "المهرجان الدولي المغاربي للفيلم يطلق دورته 15 في مدينة وجدة #جريدة_عُمان https://www.omandaily.om/article/1212848",
-    "text": "المهرجان الدولي المغاربي للفيلم يطلق دورته 15 في مدينة وجدة #جريدة_عُمان omandaily.om/article/1212848",
-    "url": "https://x.com/OmanEPress/status/2111443751357067537",
-    "published": "2026-10-17T13:06:33+00:00",
-    "detected_at": "2026-10-17T18:46:52.862187+00:00",
-    "status": "filtered",
-    "sent_to_telegram": false
-  },
-  {
     "id": "b9f4f4eeaa65c61c47fcc53a0bf33ec352c1645b2dd2c72b67f03aded81cee18",
     "account": "OmanEPress",
     "source": "جريدة عمان",
@@ -64998,5 +64985,18 @@
     "detected_at": "2026-10-30T20:45:19.902740+00:00",
     "status": "sent",
     "sent_to_telegram": true
+  },
+  {
+    "id": "c2f818150976f75c4f161457721ca9c290330165756fc5f3ab61090f8cd8cc1b",
+    "account": "OmanObserver",
+    "source": "عمان أوبزرفر",
+    "scope": "national",
+    "title": "Here is the front page of today's Oman Observer, the English daily from the Sultanate of Oman #OmanObserver https://www.omanobserver.om/pdf/2026/10/31/omandailyobserver-20261031-1.pdf?ts=230446",
+    "text": "Here is the front page of today's Oman Observer, the English daily from the Sultanate of Oman #OmanObserver omanobserver.om/pdf/2026/10/…",
+    "url": "https://x.com/OmanObserver/status/2116272288563913092",
+    "published": "2026-10-30T20:53:26+00:00",
+    "detected_at": "2026-10-31T00:41:55.278268+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
   }
 ]
