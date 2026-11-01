@@ -1,44 +1,5 @@
 [
   {
-    "id": "73ef1f132f26a05e503539848e3345147b9202f953fb31e40cc2ef3f7273f0c1",
-    "account": "OmanObserver",
-    "source": "عمان أوبزرفر",
-    "scope": "national",
-    "title": "Egypt’s President says he will leave office in 2030 #Oman #OmanObserver #Egypt https://www.omanobserver.om/article/1197953/world/africa/egypts-president-says-he-will-leave-office-in-2030",
-    "text": "Egypt’s President says he will leave office in 2030 #Oman #OmanObserver #Egypt omanobserver.om/article/1197… Link Egypt’s President says he will leave office in 2030 President Abdel Fattah el-Sissi of Egypt said on Saturday that he would leave office when his term ends in 2030, renewing a pledge to respect... omanobserver.om",
-    "url": "https://x.com/OmanObserver/status/2111707280831877444",
-    "published": "2026-10-18T06:33:44+00:00",
-    "detected_at": "2026-10-18T11:39:46.221392+00:00",
-    "status": "filtered",
-    "sent_to_telegram": false
-  },
-  {
-    "id": "daa710543049374cb2639f4b77f7d35430d05a09398a79b198006d21817453a0",
-    "account": "OmanObserver",
-    "source": "عمان أوبزرفر",
-    "scope": "national",
-    "title": "R to @OmanObserver: Image",
-    "text": "R to @OmanObserver: Image",
-    "url": "https://x.com/OmanObserver/status/2111724725974229410",
-    "published": "2026-10-18T07:43:03+00:00",
-    "detected_at": "2026-10-18T11:39:46.221445+00:00",
-    "status": "filtered",
-    "sent_to_telegram": false
-  },
-  {
-    "id": "b8bc401dcef0e888572a153191bd5e6f9e56d9b933dda86ce1f4b2b0ff48c589",
-    "account": "OmanObserver",
-    "source": "عمان أوبزرفر",
-    "scope": "national",
-    "title": "Preparations are underway in the friendly United Kingdom to welcome His Majesty Sultan Haitham bin Tarik @UKinOman #Oman #OmanObserver #UK https://www.omanobserver.om/article/1197972/oman/his-majesty/preparations-underway-to-welcome-his-majesty-in-uk",
-    "text": "Preparations are underway in the friendly United Kingdom to welcome His Majesty Sultan Haitham bin Tarik @UKinOman #Oman #OmanObserver #UK omanobserver.om/article/1197… Link Preparations underway to welcome His Majesty in UK Windsor: Preparations are underway in the friendly United Kingdom to welcome His Majesty Sultan Haitham bin Tarik, who is paying a state visit in... omanobserver.om",
-    "url": "https://x.com/OmanObserver/status/2111722067293094184",
-    "published": "2026-10-18T07:32:29+00:00",
-    "detected_at": "2026-10-18T11:39:46.221564+00:00",
-    "status": "filtered",
-    "sent_to_telegram": false
-  },
-  {
     "id": "9e076b19d606f0aa92358483daa7adf67c7cf5e9e0d8d55840892ce90c4f9964",
     "account": "OmanObserver",
     "source": "عمان أوبزرفر",
@@ -64996,6 +64957,45 @@
     "url": "https://x.com/EduGovOman/status/2115783174706151438",
     "published": "2026-10-29T12:29:52+00:00",
     "detected_at": "2026-10-31T21:28:54.207387+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "e01922e68ec9604848fa9e4c454a3a1b1967c6d414fc060975fafcb95792d3c6",
+    "account": "Atheer_Oman",
+    "source": "أثير",
+    "scope": "national",
+    "title": "R to @Atheer_Oman: #أثير| بدأت رحلة اللبان العُماني نحو أسواق بعيدة، لما عُرف به من استخدامات متعددة",
+    "text": "#أثير | بدأت رحلة اللبان العُماني نحو أسواق بعيدة، لما عُرف به من استخدامات متعددة",
+    "url": "https://x.com/Atheer_Oman/status/2116521711998832817",
+    "published": "2026-10-31T13:24:33+00:00",
+    "detected_at": "2026-11-01T00:26:48.207573+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "dd8520edd63da0b562c691ff9648d0754f8d678e78413edf0bfb146734cb255c",
+    "account": "Atheer_Oman",
+    "source": "أثير",
+    "scope": "national",
+    "title": "R to @Atheer_Oman: #أثير| شق اللبان طريقه عبر شبكة من المسارات البحرية... وصولاً إلى الصين",
+    "text": "#أثير | شق اللبان طريقه عبر شبكة من المسارات البحرية... وصولاً إلى الصين",
+    "url": "https://x.com/Atheer_Oman/status/2116521908112068865",
+    "published": "2026-10-31T13:25:20+00:00",
+    "detected_at": "2026-11-01T00:26:48.207659+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "e62810c3c688a8e70782724d421b1594baacbeb9388cd406d08c9fd0984e96bf",
+    "account": "Atheer_Oman",
+    "source": "أثير",
+    "scope": "national",
+    "title": "R to @housingoman: #أثير| تخيل عمود إنارة يتفاعل مع حركتك، وحاوية نفايات تُبلغك عن امتلاءها هذه إحدى ملامح المدن الذكية",
+    "text": "#أثير | تخيل عمود إنارة يتفاعل مع حركتك، وحاوية نفايات تُبلغك عن امتلاءها هذه إحدى ملامح المدن الذكية",
+    "url": "https://x.com/Atheer_Oman/status/2116555900752449571",
+    "published": "2026-10-31T15:40:25+00:00",
+    "detected_at": "2026-11-01T00:26:48.207744+00:00",
     "status": "filtered",
     "sent_to_telegram": false
   }
