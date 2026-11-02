@@ -1,31 +1,5 @@
 [
   {
-    "id": "6e51f307983e25d77d66bdc3a9f7fdcaae687411937d0bba32c5ac8d5b2edac7",
-    "account": "al_wisal",
-    "source": "إذاعة الوصال",
-    "scope": "national",
-    "title": "الدكتور محمد الشعيلي ضيف #البث_الخاص مع سالم العمري @salimalamrii والحديث عن العلاقات التاريخية العمانية - البريطانية #الوصال",
-    "text": "الدكتور محمد الشعيلي ضيف #البث_الخاص مع سالم العمري @salimalamrii والحديث عن العلاقات التاريخية العمانية - البريطانية #الوصال",
-    "url": "https://x.com/al_wisal/status/2112138882481553790",
-    "published": "2026-10-19T11:08:45+00:00",
-    "detected_at": "2026-10-19T11:11:43.117052+00:00",
-    "status": "filtered",
-    "sent_to_telegram": false
-  },
-  {
-    "id": "6fadf9b7945589c567f243a5ead1a15e6a34076eec5f4bd0ae3143e65b654f75",
-    "account": "shabiba",
-    "source": "الشبيبة",
-    "scope": "national",
-    "title": "#عاجل #الشبيبة مخبأة بأكياس مواد غذائية.. جمارك عُمان تُحبط تهريب كمية من المخدرات https://shabiba.com/a/212810",
-    "text": "#عاجل #الشبيبة مخبأة بأكياس مواد غذائية.. جمارك عُمان تُحبط تهريب كمية من المخدرات shabiba.com/a/212810",
-    "url": "https://x.com/shabiba/status/2112082943510212854",
-    "published": "2026-10-19T07:26:28+00:00",
-    "detected_at": "2026-10-19T11:11:51.562787+00:00",
-    "status": "sent",
-    "sent_to_telegram": true
-  },
-  {
     "id": "41f514fefe295b45d6d66a5ea266c414e1733edcf052a2655de40944ba49d8d8",
     "account": "shabiba",
     "source": "الشبيبة",
@@ -64996,6 +64970,32 @@
     "url": "https://x.com/omantvnews/status/2116974577842885101",
     "published": "2026-11-01T19:24:05+00:00",
     "detected_at": "2026-11-01T22:44:50.159912+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "e24eff08a3f6e3d231094aa1fdde94c650202cdab12dc379b7fc2a0a259c55e8",
+    "account": "shabiba",
+    "source": "الشبيبة",
+    "scope": "national",
+    "title": "#الشبيبة إطلاق النسخة الثانية من برنامج تطوير الموردين للمؤسسات الصغيرة والمتوسطة في عُمان https://shabiba.com/a/213596",
+    "text": "#الشبيبة إطلاق النسخة الثانية من برنامج تطوير الموردين للمؤسسات الصغيرة والمتوسطة في عُمان shabiba.com/a/213596",
+    "url": "https://x.com/shabiba/status/2117028914006823179",
+    "published": "2026-11-01T23:00:00+00:00",
+    "detected_at": "2026-11-02T02:20:00.274378+00:00",
+    "status": "filtered",
+    "sent_to_telegram": false
+  },
+  {
+    "id": "c42274455479c7011470e23b40e89e539daafd3b3e52d068ec32f7a23fba8e02",
+    "account": "shabiba",
+    "source": "الشبيبة",
+    "scope": "national",
+    "title": "#الشبيبة «سفرة صور في رمضان» يحصد المركز الثالث عالميًا في جوائز «Food Film Menu 2026» https://shabiba.com/a/213595",
+    "text": "#الشبيبة «سفرة صور في رمضان» يحصد المركز الثالث عالميًا في جوائز «Food Film Menu 2026» shabiba.com/a/213595",
+    "url": "https://x.com/shabiba/status/2117036466001900010",
+    "published": "2026-11-01T23:30:00+00:00",
+    "detected_at": "2026-11-02T02:20:00.274509+00:00",
     "status": "filtered",
     "sent_to_telegram": false
   }
